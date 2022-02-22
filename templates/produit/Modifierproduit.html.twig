@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<h1 class="h3 mb-2 text-gray-800">Ajouter un Produit</h1>
+
+<div class="form-group">
+    {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+
+    <div class="form-group" data-sb-validations="required">
+        {{ form_label(form.type_produit	, 'Type Produit')  }}
+        {{ form_widget(form.type_produit	  ,{'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Type Produit'}} ) }}
+        {{ form_errors(form.type_produit ) }}
+
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.prix_produit, 'prix produit')  }}
+
+        {{ form_widget(form.prix_produit , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'prix produit'}} ) }}
+        {{ form_errors(form.prix_produit) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.date_expo, 'date_expo')  }}
+
+        {{ form_widget(form.date_expo , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'date_expo'}} ) }}
+        {{ form_errors(form.date_expo) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.date_fin, 'date_fin')  }}
+
+        {{ form_widget(form.date_fin , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'date_fin'}} ) }}
+        {{ form_errors(form.date_fin) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.disponibilite, 'disponibilite')  }}
+
+        {{ form_widget(form.disponibilite , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'disponibilite'}} ) }}
+        {{ form_errors(form.disponibilite) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.type_action, 'type action')  }}
+
+        {{ form_widget(form.type_action , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'type action'}} ) }}
+        {{ form_errors(form.type_action) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.imgproduit, 'image produit')  }}
+
+        {{ form_widget(form.imgproduit , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'image produit'}} ) }}
+        {{ form_errors(form.imgproduit) }}
+
+    </div>
+    {{ form_end(form) }}
+    {% endblock %}
+
+
+

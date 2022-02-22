@@ -1,0 +1,24 @@
+/*
+create or replace function FN_MOY(id departments.department_id %type) return number 
+is
+moy number;
+begin
+select avg(salary) into moy from employees
+where department_id=id;
+return moy;
+end ;
+/
+
+
+select fn_moy(110) from dual;
+*/
+
+
+creat or replace procedure PROC_DEPT()
+is
+begin
+for i in (
+select department_id, count(employee_id) nb from employees)
+loop
+dbms_output.put_line
+(

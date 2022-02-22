@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+    <button class="btn btn-success btn-icon-split" ><a href="{{ path('ajoutproduit')  }}"><span class="text" style="color: white">Ajouter </span></a></button>
+
+
+    <br><br>
+    <table class="table table-bordered" id="t"  width="100%" cellspacing="0">
+        <thead>
+        <tr>
+
+            <th> </th>
+            <th> </th>
+            <th>id  </th>
+            <th>type_produit </th>
+            <th>prix_produit </th>
+            <th>date_expo</th>
+            <th>date_fin</th>
+            <th> disponibilite</th>
+            <th>type_action</th>
+            <th>imgproduit</th>
+        </tr>
+        </thead>
+
+        <tbody id="hi">
+
+
+            {% for i in tableproduits %}
+                <tr>
+                    <td>  <a href="{{ path('modifierproduit',{'id': i.id}) }}"  class="btn btn-info btn-icon-split">
+                                            <span class="icon text-white-50">
+                        <i class="fas fa-info-circle"></i>
+
+                    </span>
+                            <span class="text">Modifier</span>
+
+                        </a></td>
+                    <td><a href="{{ path('supprimerproduit',{'id': i.id}) }}"><img src="https://img.icons8.com/color/48/000000/trash--v2.png"/></a></td>
+
+                    <td>{{ i.id  }}</td>
+
+                    <td>{{ i.TypeProduit }}</td>
+                    <td>{{ i.PrixProduit  }}</td>
+                    <td>{{(i.DateExpo).format('d/m/Y')}}</td>
+
+                    <td>{{(i.DateFin).format('d/m/Y')}}</td>
+                    <td>{{ i.disponibilite }}</td>
+                    <td>{{ i.TypeAction }}</td>
+                    <td><img src="{{ asset('/back/images/')}}{{ i.imgproduit }}" width="100"  /></td>
+
+                </tr>
+
+            {% endfor %}
+
+
+        </tbody>
+        <tbody id="search">
+        </tbody>
+
+    </table>
+
+
+
+
+
+{% endblock %}

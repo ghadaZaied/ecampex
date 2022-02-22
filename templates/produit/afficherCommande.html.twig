@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+
+
+    <table class="table table-bordered" id="t"  width="100%" cellspacing="0">
+        <thead>
+        <tr>
+            <th></th>
+            <th>id  </th>
+
+
+        </tr>
+
+        <tbody id="hi">
+    {% for i in tablecommandes %}
+        <tr>
+            <td><a href="{{ path('suppcommande',{'id': i.id}) }}"><img src="https://img.icons8.com/color/48/000000/trash--v2.png"/></a></td>
+
+            <td>{{ i.id  }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+
+        </tbody>
+{% endblock %}
